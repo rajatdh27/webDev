@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgb(232, 62, 62), rgb(255, 131, 151));
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: flex;
+  margin: 1rem 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  align-items: center;
+  gap: 0.8rem;
+  color: #555;
+}
+
+a:hover {
+  color: rgb(49, 49, 49);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  height: 3.5rem;
+  width: 7rem;
+  background-color: #fff;
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.1);
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.75s;
+  overflow: hidden;
+}
+
+.navigation.active {
+  width: 20rem;
+  height: 24rem;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.75s;
+}
+
+.navigation .userBox {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.navigation.active .userBox {
+  width: calc(100% - 3.5rem);
+}
+
+.navigation .userBox .imgBox {
+  min-width: 3.5rem;
+  position: relative;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: red;
+  border: 0.5rem solid white;
+  overflow: hidden;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.navigation .userBox .userName {
+  white-space: nowrap;
+  color: #555;
+  font-size: 1.3rem;
+}
+.navigation .userBox .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.navigation .menuToggle {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation .menuToggle::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 0.17rem;
+  cursor: pointer;
+  background-color: rgb(53, 53, 53);
+  transform: translateY(-10px);
+  box-shadow: 0 10px rgb(53, 53, 53);
+  transition: 0.5s;
+}
+
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 0.17rem;
+  cursor: pointer;
+  background-color: rgb(53, 53, 53);
+  transform: translateY(10px);
+  transition: 0.5s;
+}
+
+.navigation.active .menuToggle::before {
+  transform: translateY(0) rotate(45deg);
+  box-shadow: 0 0 rgb(53, 53, 53);
+}
+
+.navigation.active .menuToggle::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 3.5rem);
+  margin-top: 3.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
